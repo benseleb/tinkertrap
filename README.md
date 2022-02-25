@@ -1,2 +1,2 @@
-# tinkertrap
+# TinkerTrap
 open source camera trap repository
