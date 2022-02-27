@@ -10,4 +10,23 @@ In some cases, extensive modification of operating procedure and camera trap har
 
 In an attempt to address the restrictions of the traditional camera trap model, and in order to expand the usefulness of this very important tool, many have proposed the use of open-source electronic prototyping platforms such as Arduino and Raspberry Pi [[2](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169758),[3](https://dl.acm.org/doi/10.1145/3290605.3300532),[4](https://www.sciencedirect.com/science/article/pii/S2468067220300195),[5](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.3040)]. These controllers have the capability to offer the user complete control over the imaging procedure of a camera trap while also offering compatibility with multiple sensors. Also, by weighing the input of multiple sensors in complex ways, it’s possible that open-source microcontrollers could expand camera trap functionality even further. However, these microcontroller-based platforms suffer from various drawbacks including cost, reduced lifespan/durability, lack of helpful resources, and high technical knowledge requirements. Thus, most previous efforts have been abandoned or implemented only as educational tools. To date, there is still no open-source camera trap platform to have seen widespread adoption within the wildlife research community.
 
-### VERSION 1.0
+### OTS CAMERA TRAP SETTINGS AND SPECIAL FEATURES
+
+Camera traps must be able to take images at night. Thus they are all equipped with IR leds and an IR-cut filter. Most camera traps use an IR-cut filter mechanism to push and pull a sliding filter over the sensor, depending on whether daytime or nighttime images are needed (left image). An alternative solution is to use two sensors, one with the IR-cut filter permanently installed, and the other without. This has the benefit of reducing any noise coming from an IR-filter mechanism (typically an audible 'click'), and also could enable instantaneous IR functionality if needed. 
+
+![image](https://user-images.githubusercontent.com/65932258/155892610-f3db632b-6c32-4226-8605-91e6cd289c6d.png)
+![image](https://user-images.githubusercontent.com/65932258/155892611-fcf6a534-fce5-4e54-a185-3a26e2c26253.png)
+
+All camera traps use a passive-infrared sensor to detect animals, typically an LHI 968 or equivalent. 
+
+![image](https://user-images.githubusercontent.com/65932258/155892557-76a5c4f6-6fcc-43d8-a4f5-714e1c366b75.png)
+
+All camera traps include some kind of onboard user-interface in order to apply settings. Reconyx, one of the most respected camera trap producers, only implements a two-line text display, and 5 buttons for control (left). Many other camera traps use an OLED display to enable immediate image/video review, typically for an added cost (center). The Bushnell NatureView camera trap (right) actually comes with a peripheral plug-in OLED display. 
+
+![image](https://user-images.githubusercontent.com/65932258/155892908-e3d788eb-f9a1-4162-ad46-1b51dd2c8639.png)
+![image](https://user-images.githubusercontent.com/65932258/155892954-47e3e85a-76bf-4751-853c-d84cd42b065b.png)
+![image](https://user-images.githubusercontent.com/65932258/155892979-205a4579-a8c5-421e-b97d-0051beafe76c.png)
+
+
+
+## VERSION 1.0
