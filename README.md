@@ -30,3 +30,14 @@ All camera traps include some kind of onboard user-interface in order to apply s
 OTS camera traps seem to be using the same (or similar) chipsets that are mass-produced and well guarded in terms of firmware. Thus, most camera traps share the same standard features. To get an idea of these features (and some hopeful improvements/additions), Meek and Pettit published a review in 2012, with [user-based design specifications for the ultimate camera trap for wildlife research](https://bioone.org/journals/wildlife-research/volume-39/issue-8/WR12138/User-based-design-specifications-for-the-ultimate-camera-trap-for/10.1071/WR12138.short). Akiba and Alasdair give a brief description of camera trap hardware and potential OS design directions in this [WILDLABS discussion](https://www.wildlabs.net/community/thread/694).
 
 ## VERSION 1.0
+![image](https://user-images.githubusercontent.com/65932258/155895946-c8ebf240-5dbd-4ffd-a089-1c298e004d12.png)
+
+## VERSION 2.0
+![image](https://user-images.githubusercontent.com/65932258/155895980-b4847d08-71ec-4a85-9fd5-4c0c58192175.png)
+
+## VERSION 3.0
+
+| ![ESP32-S3-EYE](https://user-images.githubusercontent.com/65932258/155896141-9abaea1d-3b0f-407f-b358-a88c962f4b0e.png)| 
+|:--:| 
+|ESP32-S3-EYE|
+
