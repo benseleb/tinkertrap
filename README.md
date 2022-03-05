@@ -10,7 +10,8 @@ In some cases, extensive modification of operating procedure and camera trap har
 
 In an attempt to address the restrictions of the traditional camera trap model, and in order to expand the usefulness of this very important tool, many have proposed the use of open-source electronic prototyping platforms such as Arduino and Raspberry Pi [[2](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169758),[3](https://dl.acm.org/doi/10.1145/3290605.3300532),[4](https://www.sciencedirect.com/science/article/pii/S2468067220300195),[5](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.3040)]. These controllers have the capability to offer the user complete control over the imaging procedure of a camera trap while also offering compatibility with multiple sensors. Also, by weighing the input of multiple sensors in complex ways, it’s possible that open-source microcontrollers could expand camera trap functionality even further. However, these microcontroller-based platforms suffer from various drawbacks including cost, reduced lifespan/durability, lack of helpful resources, and high technical knowledge requirements. Thus, most previous efforts have been abandoned or implemented only as educational tools. To date, there is still no open-source camera trap platform to have seen widespread adoption within the wildlife research community.
 
-### OTS CAMERA TRAP SETTINGS AND SPECIAL FEATURES
+### OTS CAMERA TRAPS
+<details><summary> click to expand </summary>
 
 Camera traps must be able to take images at night. Thus they are all equipped with IR leds and an IR-cut filter. Most camera traps use an IR-cut filter mechanism to push and pull a sliding filter over the sensor, depending on whether daytime or nighttime images are needed (left image). An alternative solution is to use two sensors, one with the IR-cut filter permanently installed, and the other without. This has the benefit of reducing any noise coming from an IR-filter mechanism (typically an audible 'click'), and also could enable instantaneous IR functionality if needed. 
 
@@ -28,12 +29,53 @@ All camera traps include some kind of onboard user-interface in order to apply s
 ![image](https://user-images.githubusercontent.com/65932258/155892979-205a4579-a8c5-421e-b97d-0051beafe76c.png)
 
 OTS camera traps seem to be using the same (or similar) chipsets that are mass-produced and well guarded in terms of firmware. Thus, most camera traps share the same standard features. To get an idea of these features (and some hopeful improvements/additions), Meek and Pettit published a review in 2012, with [user-based design specifications for the ultimate camera trap for wildlife research](https://bioone.org/journals/wildlife-research/volume-39/issue-8/WR12138/User-based-design-specifications-for-the-ultimate-camera-trap-for/10.1071/WR12138.short). Akiba and Alasdair give a brief description of camera trap hardware and potential OS design directions in this [WILDLABS discussion](https://www.wildlabs.net/community/thread/694).
+  
+</details>
+
+### BASIC CAMERA TRAP REQUIREMENTS
+| FEATURE | TECHNICAL REQUIREMENT |
+| :--- | :---: |
+| TRIGGER TIME | < 0.5 s |
+| BATTERY LIFE | > 80 d |
+| RESOLUTION | > 2 MP |
+| TIME STAMP | minute resolution |
+| WATERPROOF | IP66 |
+
+### Other functional requirements: 
+- Minimally programmable via an onboard interface
+- Scalable sensitivity
+- IR illumination
 
 ## VERSION 1.0
+<details><summary> click to expand </summary>
+Based on some of the options offered in the WILDLABS discussion, first attempted to use an FPGA in conjunction with an Arduino microcontroller. The intention was to have the FPGA do the more laborious tasks of wake-up, camera configuration, and image processing, while the microcontroller would act as an interface for users to change settings (alter behavior of the FPGA) and access basic image data. The napkin-sketch below shows the hopeful architecture. 
+
 ![image](https://user-images.githubusercontent.com/65932258/155895946-c8ebf240-5dbd-4ffd-a089-1c298e004d12.png)
 
+I initially acquired an [Arduino Maker Vidor 4000](https://store-usa.arduino.cc/products/arduino-mkr-vidor-4000) to start testing with. The board comes with both an Arm SAMD21 microcontroller and an Intel Cyclone 10CL016 FPGA, and a number of other features relevant to camera trap functionality. 
+
+![image](https://user-images.githubusercontent.com/65932258/156899179-78066261-094f-4bec-a35d-3bfeb4297e7a.png)
+
+The VIDOR is an awesome board, but for someone with no FPGA or analog hardware experience, it was too difficult to make any progress with it. I didn't help that the resources that exist for the board are limited, and that a friendly Arduino-FPGA infrastructure proposed by the Arduino developers has not yet come to fruition. I still hope to use the board for a future project one day. 
+After playing a bit with Arducam, an FPGA-based camera module for Arduino, I concluded that the baseline power consumption of an FPGA (due to current leakage, I believe) would be very difficult to optimize and overcome. Also, ArduCam's FPGA code is not open source, otherwise I may have lingered on this option longer. 
+
+</details>
+  
 ## VERSION 2.0
+<details><summary> click to expand </summary>
+After reviewing a few more potential platforms to build on, I looked back to the ESP32-CAM, a board I had overlooked earlier in my search. The ESP32-CAM is a very economic (< $10 USD) camera IoT device sporting an AIThinker ESP32S microcontroller. Most of the ESP32 line offers low power functionality (in the form of different sleep and wakeup modes), Wi-Fi and Bluetooth capabilities, and compatibility with multiple programming toolchains (Arduino IDE). The ESP32-CAM has a microSD card slot and comes with an OV2460 camera. Existing resources, tutorials, and code repositories made replication of a psuedo-camera trap simple, with the addition of an OTS PIR-sensor module. 
+
 ![image](https://user-images.githubusercontent.com/65932258/155895980-b4847d08-71ec-4a85-9fd5-4c0c58192175.png)
+
+Power consumption and trigger times of initial tests were not ideal, but they showed potential for optimization. Using the light sleep mode, which approximately doubles power consumption, wakeup time can be made negligible. However, the camera must perform auto exposure before acquiring an image for the best quality. This takes a substantial amount of time in the current implementation, which I alotted for with a 500ms delay (0.5 seconds is the maximum allowable trigger time).
+Based on this reasonable progress, I put together a proof-of-concept device based on ESP32-CAM and a custom PCB shield. 
+
+
+
+ESP32-CAM Schematic Diagram
+![image](https://user-images.githubusercontent.com/65932258/156899701-2c26ac5d-6a3d-4dda-9f60-61f61bae65fb.png)
+
+</details>
 
 ## VERSION 3.0
 
