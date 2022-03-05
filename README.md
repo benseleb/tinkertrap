@@ -32,7 +32,7 @@ OTS camera traps seem to be using the same (or similar) chipsets that are mass-p
   
 </details>
 
-### BASIC CAMERA TRAP REQUIREMENTS
+#### BASIC CAMERA TRAP REQUIREMENTS
 | FEATURE | TECHNICAL REQUIREMENT |
 | :--- | :---: |
 | TRIGGER TIME | < 0.5 s |
@@ -41,7 +41,7 @@ OTS camera traps seem to be using the same (or similar) chipsets that are mass-p
 | TIME STAMP | minute resolution |
 | WATERPROOF | IP66 |
 
-### Other functional requirements: 
+##### Other functional requirements: 
 - Minimally programmable via an onboard interface
 - Scalable sensitivity
 - IR illumination
