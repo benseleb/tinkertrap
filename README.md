@@ -3,14 +3,13 @@ open source camera trap repository
 
 ### BACKGROUND
 Camera traps, or remotely triggered cameras, have become an incredibly popular tool among ecologists and other wildlife professionals. At the most basic level, the modern camera trap can be described simply as a digital camera connected to an infrared sensor which can automatically detect animals [[1](https://www.wwf.org.uk/sites/default/files/2019-04/CameraTraps-WWF-guidelines.pdf)]. Typically mounted on trees or other natural supports in order to capture images of passing wildlife, they have been proven useful for detecting cryptic species, identifying species distributions, documenting predation, monitoring behavior, and estimating population size. Despite their ubiquity, commercial camera traps have critical limitations that present challenges for the study of certain species, habitats, and/or the behavior of interest. 
-
-The development of commercially available models has been driven almost entirely by the requirements of North American and European Hunters. Most models are equipped with passive-infrared (PIR) sensors that are specialized for detecting the thermal signatures of medium to large sized mammals and use cameras with fixed depths of field. For small animals, ectotherms, and insects, these PIR sensors are largely ineffective. 
-
+Commercially available camera traps are designed predominantly for hunters to observe game animals. Wildlife researchers merely co-opt the tool, often having to stretch its capabilities to identify, assess abundance, and monitor the behavior of species. However, commercial camera traps can only be stretched so far; they lack customizability for unique applications, and hardware limitations like fixed focal distances and thermally activated passive-infrared (PIR) sensors make them ill-suited for taxa other than larger mammals and birds (>1 kg). There is a growing need in the wildlife research community for a less restricted platform to facilitate unique studiesand to enable modification for the reliable sampling of small animals—particularly reptiles, amphibians, and invertebrates.
 In some cases, extensive modification of operating procedure and camera trap hardware can improve effectiveness. The camera overhead augmented temperature (COAT) method is one such modification, but it typically voids any product warranty, has the potential to destroy an expensive piece of equipment, and only slightly enhances the functionality of the device. Besides being exclusive to medium to large sized mammals, commercial camera traps also limit users to a basic triggering protocol and finite imaging options. 
+In recent years, a few innovative solutions to this tool gap have been proposed. 
+In an attempt to address the restrictions of the traditional camera trap model, and in order to expand the usefulness of this very important tool, many have proposed the use of open-source electronic prototyping platforms. [[2](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169758),[3](https://dl.acm.org/doi/10.1145/3290605.3300532),[4](https://www.sciencedirect.com/science/article/pii/S2468067220300195),[5](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.3040)]. These controllers have the capability to offer the user complete control over the imaging procedure of a camera trap while also offering compatibility with multiple sensors. Also, by weighing the input of multiple sensors in complex ways, it’s possible that open-source microcontrollers could expand camera trap functionality even further. Though each offers some added functionality over CCTs, previosly proposed platforms overlook fundamental requirements in cost, usability, and battery life, preventing their broader adoption: Proposed solutions are often more expensive than budget CCTs, which are <$250 USD and still prohibitively costly to many researchers; Proposed solutions have steep learning curves, poor resistance to field conditions, and require greater infrastructure to take advantage of added functionality; Proposed solutions sacrifice battery life to use power-hungry, software-based detection methods, like pixel change detection, and enable utilization of inefficient, electronic prototyping platforms like Raspberry Pi.
+Thus, most previous efforts have been abandoned or implemented only as educational tools. To date, there is still no open-source camera trap platform to have seen widespread adoption within the wildlife research community.
 
-In an attempt to address the restrictions of the traditional camera trap model, and in order to expand the usefulness of this very important tool, many have proposed the use of open-source electronic prototyping platforms such as Arduino and Raspberry Pi [[2](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169758),[3](https://dl.acm.org/doi/10.1145/3290605.3300532),[4](https://www.sciencedirect.com/science/article/pii/S2468067220300195),[5](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.3040)]. These controllers have the capability to offer the user complete control over the imaging procedure of a camera trap while also offering compatibility with multiple sensors. Also, by weighing the input of multiple sensors in complex ways, it’s possible that open-source microcontrollers could expand camera trap functionality even further. However, these microcontroller-based platforms suffer from various drawbacks including cost, reduced lifespan/durability, lack of helpful resources, and high technical knowledge requirements. Thus, most previous efforts have been abandoned or implemented only as educational tools. To date, there is still no open-source camera trap platform to have seen widespread adoption within the wildlife research community.
-
-### OTS CAMERA TRAPS
+### OFF-THE-SHELF (OTS) CAMERA TRAPS
 <details><summary> click to expand </summary>
 
 Camera traps must be able to take images at night. Thus they are all equipped with IR leds and an IR-cut filter. Most camera traps use an IR-cut filter mechanism to push and pull a sliding filter over the sensor, depending on whether daytime or nighttime images are needed (left image). An alternative solution is to use two sensors, one with the IR-cut filter permanently installed, and the other without. This has the benefit of reducing any noise coming from an IR-filter mechanism (typically an audible 'click'), and also could enable instantaneous IR functionality if needed. 
@@ -28,9 +27,10 @@ All camera traps include some kind of onboard user-interface in order to apply s
 ![image](https://user-images.githubusercontent.com/65932258/155892954-47e3e85a-76bf-4751-853c-d84cd42b065b.png)
 ![image](https://user-images.githubusercontent.com/65932258/155892979-205a4579-a8c5-421e-b97d-0051beafe76c.png)
 
-OTS camera traps seem to be using the same (or similar) chipsets that are mass-produced and well guarded in terms of firmware. Thus, most camera traps share the same standard features. To get an idea of these features (and some hopeful improvements/additions), Meek and Pettit published a review in 2012, with [user-based design specifications for the ultimate camera trap for wildlife research](https://bioone.org/journals/wildlife-research/volume-39/issue-8/WR12138/User-based-design-specifications-for-the-ultimate-camera-trap-for/10.1071/WR12138.short). Akiba and Alasdair give a brief description of camera trap hardware and potential OS design directions in this [WILDLABS discussion](https://www.wildlabs.net/community/thread/694).
-  
+OTS camera traps seem to be using the same (or similar) chipsets that are mass-produced and well guarded in terms of firmware. Thus, most camera traps share the same standard features. 
 </details>
+
+To get an idea of required features (and some hopeful improvements/additions), Meek and Pettit published a review in 2012, with [user-based design specifications for the ultimate camera trap for wildlife research](https://bioone.org/journals/wildlife-research/volume-39/issue-8/WR12138/User-based-design-specifications-for-the-ultimate-camera-trap-for/10.1071/WR12138.short).
 
 #### BASIC CAMERA TRAP REQUIREMENTS
 | FEATURE | TECHNICAL REQUIREMENT |
@@ -46,7 +46,10 @@ OTS camera traps seem to be using the same (or similar) chipsets that are mass-p
 - Scalable sensitivity
 - IR illumination
 
-## VERSION 1.0
+### OPEN SOURCE (OS) CAMERA TRAPS
+Akiba and Alasdair give a brief description of camera trap hardware and potential OS design directions in this [WILDLABS discussion](https://www.wildlabs.net/community/thread/694).
+
+### VERSION 1.0
 <details><summary> click to expand </summary>
 Based on some of the options offered in the WILDLABS discussion, first attempted to use an FPGA in conjunction with an Arduino microcontroller. The intention was to have the FPGA do the more laborious tasks of wake-up, camera configuration, and image processing, while the microcontroller would act as an interface for users to change settings (alter behavior of the FPGA) and access basic image data. The napkin-sketch below shows the hopeful architecture. 
 
@@ -61,7 +64,7 @@ After playing a bit with Arducam, an FPGA-based camera module for Arduino, I con
 
 </details>
   
-## VERSION 2.0
+### VERSION 2.0
 <details><summary> click to expand </summary>
 After reviewing a few more potential platforms to build on, I looked back to the ESP32-CAM, a board I had overlooked earlier in my search. The ESP32-CAM is a very economic (< $10 USD) camera IoT device sporting an AIThinker ESP32S microcontroller. Most of the ESP32 line offers low power functionality (in the form of different sleep and wakeup modes), Wi-Fi and Bluetooth capabilities, and compatibility with multiple programming toolchains (Arduino IDE). The ESP32-CAM has a microSD card slot and comes with an OV2460 camera. Existing resources, tutorials, and code repositories made replication of a psuedo-camera trap simple, with the addition of an OTS PIR-sensor module. 
 
@@ -77,9 +80,10 @@ ESP32-CAM Schematic Diagram
 
 </details>
 
-## VERSION 3.0
+### VERSION 3.0
 
 | ![ESP32-S3-EYE](https://user-images.githubusercontent.com/65932258/155896141-9abaea1d-3b0f-407f-b358-a88c962f4b0e.png)| 
 |:--:| 
 |ESP32-S3-EYE|
+
 
