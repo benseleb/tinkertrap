@@ -117,10 +117,9 @@ Based on this reasonable progress, I put together a proof-of-concept device base
 ![image](https://user-images.githubusercontent.com/65932258/157107363-2cbd8bc3-867a-43a6-be0c-07d3248684a0.png)
   
 <!-- side-by-side with Reconyx -->
-<img src="https://user-images.githubusercontent.com/65932258/157100354-df416fed-fe04-44f6-8cab-ba7a751c9779.png" width ="900">
-
+<img src="https://user-images.githubusercontent.com/65932258/157100354-df416fed-fe04-44f6-8cab-ba7a751c9779.png" width ="600">
 <!-- deployed side-by-side with Reconyx -->
-<img src="https://user-images.githubusercontent.com/65932258/157101213-54df41ba-afde-41e0-82ae-3ee2daa075ba.png" width ="900">
+<img src="https://user-images.githubusercontent.com/65932258/157101213-54df41ba-afde-41e0-82ae-3ee2daa075ba.png" width ="300">
 
 <!-- Collage of images from the field --> 
 <img src="https://user-images.githubusercontent.com/65932258/157100419-5cb22d93-771d-4764-90da-520f5531e221.png" width ="900">
