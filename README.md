@@ -64,7 +64,10 @@ Based on some of the options offered in the WILDLABS discussion, first attempted
 I initially acquired an [Arduino Maker Vidor 4000](https://store-usa.arduino.cc/products/arduino-mkr-vidor-4000) to start testing with. The board comes with both an Arm SAMD21 microcontroller and an Intel Cyclone 10CL016 FPGA, and a number of other features relevant to camera trap functionality. 
 
 <!-- Arduino Maker Vidor 4000 -->
-<img src="https://user-images.githubusercontent.com/65932258/156899179-78066261-094f-4bec-a35d-3bfeb4297e7a.png" width ="600">
+| <img src="https://user-images.githubusercontent.com/65932258/156899179-78066261-094f-4bec-a35d-3bfeb4297e7a.png" width ="600"> | 
+|:--:| 
+|Arduino Maker Vidor 4000|
+
 
 The VIDOR is an awesome board, but for someone with no FPGA or analog hardware experience, it was too difficult to make any progress with it. I didn't help that the resources that exist for the board are limited, and that a friendly Arduino-FPGA infrastructure proposed by the Arduino developers has not yet come to fruition. I still hope to use the board for a future project one day. 
 After playing a bit with Arducam, an FPGA-based camera module for Arduino, I concluded that the baseline power consumption of an FPGA (due to current leakage, I believe) would be very difficult to optimize and overcome. Also, ArduCam's FPGA code is not open source, otherwise I may have lingered on this option longer. 
@@ -74,7 +77,12 @@ After playing a bit with Arducam, an FPGA-based camera module for Arduino, I con
 ### VERSION 2.0
 <details><summary> click to expand </summary>
   
-After reviewing a few more potential platforms to build on, I looked back to the ESP32-CAM, a board I had overlooked earlier in my search. The ESP32-CAM is a very economic (< $10 USD) camera IoT device sporting an AIThinker ESP32S microcontroller. Most of the ESP32 line offers low power functionality (in the form of different sleep and wakeup modes), Wi-Fi and Bluetooth capabilities, and compatibility with multiple programming toolchains (Arduino IDE). The ESP32-CAM has a microSD card slot and comes with an OV2460 camera. Existing resources, tutorials, and code repositories made replication of a psuedo-camera trap simple, with the addition of an OTS PIR-sensor module. 
+After reviewing a few more potential platforms to build on, I looked back to the [ESP32-CAM](https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/113990580/9697033?utm_adgroup=Evaluation%20Boards%20-%20Sensors&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Product_Development%20Boards%2C%20Kits%2C%20Programmers&utm_term=&utm_content=Evaluation%20Boards%20-%20Sensors&gclid=Cj0KCQiA95aRBhCsARIsAC2xvfw4VLFGdVS1YPavnDXHzv1EQg6aT1j1IlLgKjaIzYuL541LPgZEd-8aAiIgEALw_wcB), a board I had overlooked earlier in my search. The ESP32-CAM is a very economic (< $10 USD) camera IoT device sporting an AIThinker ESP32S microcontroller. Most of the ESP32 line offers low power functionality (in the form of different sleep and wakeup modes), Wi-Fi and Bluetooth capabilities, and compatibility with multiple programming toolchains (Arduino IDE). The ESP32-CAM has a microSD card slot and comes with an OV2460 camera. Existing resources, tutorials, and code repositories made replication of a psuedo-camera trap simple, with the addition of an OTS PIR-sensor module. 
+
+<!-- ESP32-CAM -->
+| <img src="https://user-images.githubusercontent.com/65932258/157107767-47d88603-ea15-43b2-898a-708bdf025c34.png" width="300"> | 
+|:--:| 
+|ESP32-CAM|
 
 <!-- ESP32-CAM breadboard prototype and power consumption estimates -->
 <img src="https://user-images.githubusercontent.com/65932258/155895980-b4847d08-71ec-4a85-9fd5-4c0c58192175.png" width ="900">
@@ -85,32 +93,38 @@ Based on this reasonable progress, I put together a proof-of-concept device base
 <!-- ESP32-CAM Schematic Diagram -->
 <img src="https://user-images.githubusercontent.com/65932258/156899701-2c26ac5d-6a3d-4dda-9f60-61f61bae65fb.png" width ="900">
 
+<!-- POC Shield Layout -->
+<img src="https://user-images.githubusercontent.com/65932258/157100086-577d002d-3bd1-4da2-9b90-66ff7fedf7f7.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100086-577d002d-3bd1-4da2-9b90-66ff7fedf7f7.png)
+<!-- Assembled POC -->
+<img src="https://user-images.githubusercontent.com/65932258/157100157-350a33df-f42a-4fb9-82bd-889c09d7d22e.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100157-350a33df-f42a-4fb9-82bd-889c09d7d22e.png)
+<!-- Assembled POC and mounting to OTS enclosure -->
+<img src="https://user-images.githubusercontent.com/65932258/157100213-c33c6242-97f3-4b1b-bd45-c11719210a2c.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100213-c33c6242-97f3-4b1b-bd45-c11719210a2c.png)
+<!-- 3D model of POC and OTS enclosure -->
+<img src="https://user-images.githubusercontent.com/65932258/157100307-12bb43ee-463e-4da3-8c89-3e06bc17a3a4.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100307-12bb43ee-463e-4da3-8c89-3e06bc17a3a4.png)
+<!-- Design of enclosure lid using 3D models --> 
+<img src="https://user-images.githubusercontent.com/65932258/157100690-e44c01a3-d23d-46b1-a8a9-63f0415709c9.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100690-e44c01a3-d23d-46b1-a8a9-63f0415709c9.png)
+<!-- Waterproofing the enclosure -->
+![image](https://user-images.githubusercontent.com/65932258/157107363-2cbd8bc3-867a-43a6-be0c-07d3248684a0.png)
+  
+<!-- side-by-side with Reconyx -->
+<img src="https://user-images.githubusercontent.com/65932258/157100354-df416fed-fe04-44f6-8cab-ba7a751c9779.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157100354-df416fed-fe04-44f6-8cab-ba7a751c9779.png)
+<!-- deployed side-by-side with Reconyx -->
+<img src="https://user-images.githubusercontent.com/65932258/157101213-54df41ba-afde-41e0-82ae-3ee2daa075ba.png" width ="900">
 
-![image](https://user-images.githubusercontent.com/65932258/157101213-54df41ba-afde-41e0-82ae-3ee2daa075ba.png)
-
-![image](https://user-images.githubusercontent.com/65932258/157100419-5cb22d93-771d-4764-90da-520f5531e221.png)
-
-
-
-
-
+<!-- Collage of images from the field --> 
+<img src="https://user-images.githubusercontent.com/65932258/157100419-5cb22d93-771d-4764-90da-520f5531e221.png" width ="900">
 
 </details>
 
 ### VERSION 3.0
 
+<!-- ESP32-S3-EYE -->
 | ![ESP32-S3-EYE](https://user-images.githubusercontent.com/65932258/155896141-9abaea1d-3b0f-407f-b358-a88c962f4b0e.png)| 
 |:--:| 
 |ESP32-S3-EYE|
