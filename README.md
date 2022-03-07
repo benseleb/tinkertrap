@@ -53,7 +53,10 @@ Akiba and Alasdair give a brief description of existing camera trap hardware and
 
 ### DESIGNING TINKERTRAP
 To date, there is still no open-source camera trap platform to have seen widespread adoption within the wildlife research community. The goal of Tinkertrap is to overcome the restrictions of CCTs while avoiding pitfalls of previous OS solutions. For that, it must be programmable and modular in order to allow the use of custom protocol, alternative sensors, and operation of simple peripherals (like lights or motors). Additionally, it should offer out-of-the-box CCT functionality for those that require it, maintaining essential features of CCTs such as long battery life and fast trigger time. Lastly, the hope is to provide the barebones version of this platform at the lowest cost possible (assuming small batch orders of less than 20 units).
-I would also like to design an assortment of plug-in modules to provide a simple starting point for the integration of alternative trigger methods (besides PIR), new sensors and peripherals, various power sources, and wireless communication. For those that may be uncomfortable diving into IDEs and command lines, I’d like to prvide a graphical user interface (GUI) as a simplified, streamlined option for custom configuration.
+I would also like to design an assortment of plug-in modules (**a**) to provide a simple starting point for the integration of alternative trigger methods (besides PIR), new sensors and peripherals, various power sources, and wireless communication. For those that may be uncomfortable diving into IDEs and command lines, I’d like to prvide a graphical user interface (**b**) as a simplified, streamlined option for custom configuration.
+<!-- sketch of plug-in modules and GUI -->
+![image](https://user-images.githubusercontent.com/65932258/157113122-8268e6e8-5257-4f78-927a-15eac496159f.png)
+
 
 <details><summary> VERSION 1.0 (click to expand) </summary>
 
