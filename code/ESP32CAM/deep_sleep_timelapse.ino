@@ -77,8 +77,10 @@ void setup() {
       {REPLACE}
       Serial.println("Wakeup caused by timer");
         '''
+        '''
         {REDEFINE VARIABLES}
         captureImage("bhamla_1_timelapse_Aug5", 1, true); // capture image
+        '''
         '''
       esp_sleep_enable_timer_wakeup(interval * 1000000); // re-enable timer
       '''
