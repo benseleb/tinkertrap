@@ -1,5 +1,4 @@
-# TinkerTrap
-open source camera trap repository
+# Motivation and Device Development
 
 - [1. Off-The-Shelf Commercial Camera Traps](#1-off-the-shelf-commercial-camera-traps)
   - [1.1. Description and Use](#11-description-and-use)
