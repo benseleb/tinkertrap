@@ -47,11 +47,17 @@ void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); // disable brownout detector
 
   esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_ALL); // disable the wakeup pins
-
-  int interval = 120; // time lapse interval (seconds) 
   
+  '''
+  {REDEFINE}
+  int interval = 120; // time lapse interval (seconds) 
+  '''
+  
+  '''
+  {REPLACE} // i.e. remove Serial if not debugging
   Serial.begin(115200);
   //Serial.setDebugOutput(true);
+  '''
 
   switch(esp_sleep_get_wakeup_cause())
   {
@@ -60,13 +66,22 @@ void setup() {
       break;  
          
     case ESP_SLEEP_WAKEUP_EXT0: 
+      '''
+      {REPLACE}
       Serial.println("Wakeup caused by external signal using RTC_IO"); 
+      '''
       break;
       
     case ESP_SLEEP_WAKEUP_TIMER: // wakeup caused by timer
+      '''
+      {REPLACE}
       Serial.println("Wakeup caused by timer");
-      captureImage("bhamla_1_timelapse_Aug5", 1, true); // capture image
+        '''
+        {REDEFINE VARIABLES}
+        captureImage("bhamla_1_timelapse_Aug5", 1, true); // capture image
+        '''
       esp_sleep_enable_timer_wakeup(interval * 1000000); // re-enable timer
+      '''
       break; 
       
     case ESP_SLEEP_WAKEUP_TOUCHPAD: 
@@ -77,11 +92,14 @@ void setup() {
       Serial.println("Wakeup caused by ULP program"); 
       break;
       
-    default : 
+    default :
       Serial.println("Wakeup was not caused by deep sleep"); 
       //i.e. startup -- implement special startup?
       captureImage("startup_image", 1, true);
-      esp_sleep_enable_timer_wakeup(1 * 1000000);    
+      '''
+      {REPLACE}
+      esp_sleep_enable_timer_wakeup(1 * 1000000); 
+      '''
       break;
   }
 
@@ -99,7 +117,10 @@ void loop() { //This loop only runs in error
 
 void captureImage(String camName, int photoCount, bool flash) {
   initCamera(); //initialize OV2640 camera
-  delay(1000); //put in a pause for auto exposure? 
+  '''
+  {REDEFINE}
+  delay(500); //put in a pause for auto exposure? 
+  '''
 
   //------------------------------------PRE IMAGE ACQUISITION---------------------------------------
     /***** 
