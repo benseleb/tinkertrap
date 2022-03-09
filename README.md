@@ -5,6 +5,6 @@ TinkerTrap is built-for-purpose development platform designed to overcome the re
 [Click here](documentation/development.md) for a report of device development
 
 Contributors: 
-Benjamin Seleb
-Nicholas Flint
-Varun 
+- Benjamin Seleb
+- Nicholas Flint
+- Varun Sendilraj
