@@ -93,14 +93,24 @@ After reviewing a few more potential platforms to build on, I looked back to the
 <img src="https://user-images.githubusercontent.com/65932258/155895980-b4847d08-71ec-4a85-9fd5-4c0c58192175.png" width ="900">
 
 Power consumption and trigger times of initial tests were not ideal, but they showed potential for optimization. Using the light sleep mode, which approximately doubles power consumption, wakeup time can be made negligible. However, the camera must perform auto exposure before acquiring an image for the best quality. This takes a substantial amount of time in the current implementation, which I alotted for with a 500ms delay (0.5 seconds is the maximum allowable trigger time).
-Based on this reasonable progress, I put together a proof-of-concept device based on ESP32-CAM and a custom PCB shield. 
+Based on this reasonable progress, I put together a proof-of-concept device based on ESP32-CAM and a custom sub-board. 
 
 <!-- ESP32-CAM Schematic Diagram -->
 <img src="https://user-images.githubusercontent.com/65932258/156899701-2c26ac5d-6a3d-4dda-9f60-61f61bae65fb.png" width ="900">
 
 <!-- POC Shield Layout -->
 <img src="https://user-images.githubusercontent.com/65932258/157100086-577d002d-3bd1-4da2-9b90-66ff7fedf7f7.png" width ="900">
-
+  
+| Key Component      | Description |
+|--------------------|----|
+| ESP32-CAM     | It needs to take pictures somehow. |
+| Exposed GPIO  | The ESP32-CAM GPIO are exposed on the sub-board. |
+| FTDI Programmer Interface   | Connects the sub-board and the FTDI programmer (necessary to program the ESP32-CAM). |
+| IR Flash Module | Connects the sub board.              |
+| 5V Relay          | You can use it to control external peripherals. |
+| Dip Switch Array        | You can use it to turn on/off the relay, PIR sensor, and IR flash, in case you wanted to access their dedicated GPIO for other purposes. |
+| TPDT Switch       | Three positions functions: cuts power to the ESP32 (OFF), connects power; connects programming pin to GND (PROGRAM), and connects power; disconnects programming pin (ON)|
+  
 <!-- Assembled POC -->
 <img src="https://user-images.githubusercontent.com/65932258/157100157-350a33df-f42a-4fb9-82bd-889c09d7d22e.png" width ="900">
 
