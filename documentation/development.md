@@ -6,6 +6,9 @@
   - [1.3. Basic Features](#13-basic-features)
   - [1.4. Limitations](#14-limitations)
 
+- [2. Related Documents](#2-related-documents)
+
+
 # 1. Motivation
 
 ## 1.1. Commercial Camera Traps
@@ -158,3 +161,14 @@ Based on this reasonable progress, I put together a proof-of-concept device base
 |ESP32-S3-EYE|
 
 </details>
+  
+5.2. Schematic
+
+    TinkerTrap v2.2 Main Board Schematic (PDF)
+    TinkerTrap v2.1 Main Board Schematic (PDF)
+
+5.3. PCB Layout
+
+    TinkerTrap v2.2 Main Board PCB Layout (PDF)
+    TinkerTrap v2.1 Main Board PCB Layout (PDF)
+
