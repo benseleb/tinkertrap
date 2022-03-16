@@ -164,11 +164,11 @@ Based on this reasonable progress, I put together a proof-of-concept device base
   
 5.2. Schematic
 
-TinkerTrap v2.2 Main Board Schematic (PDF)
-TinkerTrap v2.1 Main Board Schematic (PDF)
+- TinkerTrap v1.2 Main Board Schematic (PDF)
+- TinkerTrap v1.1 Main Board Schematic (PDF)
 
 5.3. PCB Layout
 
-TinkerTrap v2.2 Main Board PCB Layout (PDF)
-TinkerTrap v2.1 Main Board PCB Layout (PDF)
+- TinkerTrap v1.2 Main Board PCB Layout (PDF)
+- TinkerTrap v1.1 Main Board PCB Layout (PDF)
 
