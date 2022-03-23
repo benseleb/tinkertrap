@@ -1,25 +1,21 @@
 # Device Development
 
 - [1. Motivation](#1-motivation)
-  - [1.1. Commercial Camera Traps](#11-commercial-camera-traps)
-  - [1.2. Traditional Use](#12-traditional-use)
-  - [1.3. Basic Features](#13-basic-features)
-  - [1.4. Limitations](#14-limitations)
+  - [1.1. Traditional Camera Traps](#12-traditional-camera-traps)
+  - [1.2. Basic Features](#13-basic-features)
+  - [1.3. Limitations](#14-limitations)
 
 - [2. Related Documents](#2-related-documents)
 
-
 # 1. Motivation
 
-## 1.1. Commercial Camera Traps
-
-## 1.2. Traditional Use
+## 1.1. Traditional Camera Traps
 
 Camera traps, or remotely triggered cameras, have become an incredibly popular tool among ecologists and other wildlife professionals. At the most basic level, the modern camera trap can be described simply as a digital camera connected to an infrared sensor which can automatically detect animals [[1](https://www.wwf.org.uk/sites/default/files/2019-04/CameraTraps-WWF-guidelines.pdf)]. Typically mounted on trees or other natural supports in order to capture images of passing wildlife, they have been proven useful for detecting cryptic species, identifying species distributions, documenting predation, monitoring behavior, and estimating population size. Despite their ubiquity, commercial camera traps have critical limitations that present challenges for the study of certain species, habitats, and/or the behavior of interest. 
 Commercially available camera traps (CCTs) are designed predominantly for hunters to observe game animals. Wildlife researchers merely co-opt the tool, often having to stretch its capabilities to identify, assess abundance, and monitor the behavior of species. However, CCTs can only be stretched so far; they lack customizability for unique applications, and hardware limitations like fixed focal distances and thermally activated passive-infrared (PIR) sensors make them ill-suited for taxa other than larger mammals and birds (>1 kg). There is a growing need in the wildlife research community for a less restricted platform to facilitate unique studiesand to enable modification for the reliable sampling of small animals—particularly reptiles, amphibians, and invertebrates.
 In some cases, extensive modification of operating procedure and camera trap hardware can improve effectiveness. The camera overhead augmented temperature (COAT) method is one such modification, but it typically voids any product warranty, has the potential to destroy an expensive piece of equipment, and only slightly enhances the functionality of the device. Besides being exclusive to medium to large sized mammals, CCTs also limit users to a basic triggering protocol and finite imaging options. 
 
-## 1.3. Basic Features
+## 1.2. Basic Features
 
 <details><summary> more camera trap info and basic requirements </summary>
 
@@ -61,7 +57,7 @@ To get an idea of required features (and some hopeful improvements/additions), M
 
 </details>
   
-## 1.4. Limitations
+## 1.3. Limitations
 
 ### OPEN SOURCE CAMERA TRAPS
 In recent years, a few innovative solutions to the tool gap presented by CCTs have been proposed. 
