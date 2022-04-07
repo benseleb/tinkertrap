@@ -150,7 +150,7 @@ Based on this reasonable progress, I put together a proof-of-concept device base
 
 ## 3.3. Hijacking the ESP32-S3-EYE
 
-So... the [ESP32-S3-EYE](https://github.com/espressif/esp-who/blob/master/docs/en/get-started/ESP32-S3-EYE_Getting_Started_Guide.md#5-related-documents) recently came to my attention. It's almost a camera trap by itself! It's got camera, LCD, microSD slot, digital microphone, USB port for communication and power AND battery charging, battery charger chip, and multiple function buttons. It's also got an accelerometer, but I don't really have a use for that. 
+So... the [ESP32-S3-EYE](https://github.com/espressif/esp-who/blob/master/docs/en/get-started/ESP32-S3-EYE_Getting_Started_Guide.md#5-related-documents) recently came to my attention. It's almost a camera trap by itself! It has a camera, LCD, microSD slot, digital microphone, USB port for communication and power AND battery charging, battery charger chip, and multiple function buttons. It's also got an accelerometer, but I don't really have a use for that. 
 
 <!-- ESP32-S3-EYE -->
 | ![ESP32-S3-EYE](https://user-images.githubusercontent.com/65932258/155896141-9abaea1d-3b0f-407f-b358-a88c962f4b0e.png)| 
