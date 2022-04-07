@@ -163,12 +163,18 @@ With the exception of GPIO3, which is used to configure LED statuses, all GPIOs 
 ![image](https://user-images.githubusercontent.com/65932258/162111161-7ad04dcc-5719-430a-bb87-d496ffd58c6d.png)
 
 None of the buttons use GPIO (they use a built in button channel), so we might as well make use of them.
-The LCD is certainly a nice feature, but I think it'll need to be scrapped. Plenty of camera traps lack one (check out Reconyx). This would free up 5 GPIO! These GPIO would be accessible via the leftmost (as shown below) header pins on the main board, if I wanted to attach my own components. The right header pins are strapping pins. 
+The LCD is certainly a nice feature, but I think it'll need to be scrapped. Plenty of camera traps lack one (check out Reconyx). This would free up 5 GPIO! 
 Say we go all out, and control the LED flash digitally, get a digital H-bridge, connect the PIR sensor, and enter the settings function via software and another GPIO attached to the switch, that only leaves one GPIO left over! Kinda measly. I'd like to leave at least 3 open for future tools. I could implement the settings like some camera traps, where you must make a modification within 10 seconds or normal functionality commences. Then I could take advantage of the boot pin like I did on the previous prototype for flashing the chip. Maybe the PIR module could be removable - to free up one GPIO for an alternative sensor? 
 That reminds me that the I2C pins are not brought out on the board. They would be accessible via the camera connector, or by removing the SMT accelerometer, or probably most easily via the ESP32 module itself. It'll look nasty but some small guage wire should do the job. 
 
 <!-- Components on ESP32-S3-EYE main board -->
 ![image](https://user-images.githubusercontent.com/65932258/162114144-79b27dea-3653-4dd9-93cc-11a23a025691.png)
+
+The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins on the main board, if I wanted to attach my own components. The right header pins are strapping pins. I found this little breakout that could make breadboarding a little bit easier! 
+
+<!-- weird little SWD breakout board --> 
+![image](https://user-images.githubusercontent.com/65932258/162117269-f57016ff-e019-4682-8f35-2d4e0c699dd2.png)
+
 
 ## 3.4. Build-your-own P(CB)izza  
 
