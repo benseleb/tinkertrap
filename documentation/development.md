@@ -9,7 +9,8 @@
 - [3. Stages](#3-development-stages)
   - [3.1. Baby's First FPGA](#31-babys-first-fpga)
   - [3.2. A Proof-of-Concept](#32-a-proof-of-concept)
-  - [3.3. Build-your-own P(CB)izza](#33-build-your-own-pcbizza)
+  - [3.3. Hijacking the ESP32-S3-EYE](#33-hijacking-the-esp32-s3-eye)
+  - [3.4. Build-your-own P(CB)izza](#34-build-your-own-pcbizza)
 - [4. Related Documents](#4-related-documents)
 
 # 1. Motivation
@@ -147,11 +148,29 @@ Based on this reasonable progress, I put together a proof-of-concept device base
 <!-- Collage of images from the field --> 
 <img src="https://user-images.githubusercontent.com/65932258/157100419-5cb22d93-771d-4764-90da-520f5531e221.png" width ="900">
 
-## 3.3. Build-your-own P(CB)izza  
+## 3.3. Hijacking the ESP32-S3-EYE
+
+So... the [ESP32-S3-EYE](https://github.com/espressif/esp-who/blob/master/docs/en/get-started/ESP32-S3-EYE_Getting_Started_Guide.md#5-related-documents) recently came to my attention. It's almost a camera trap by itself! It's got camera, LCD, microSD slot, digital microphone, USB port for communication and power AND battery charging, battery charger chip, and multiple function buttons. It's also got an accelerometer, but I don't really have a use for that. 
+
 <!-- ESP32-S3-EYE -->
 | ![ESP32-S3-EYE](https://user-images.githubusercontent.com/65932258/155896141-9abaea1d-3b0f-407f-b358-a88c962f4b0e.png)| 
 |:--:| 
 |ESP32-S3-EYE|
+
+With the exception of GPIO3, which is used to configure LED statuses, all GPIOs of the **ESP32-S3-WROOM-1** module have already been used to control specific components or functions of the board. That's unfornate, because there are 5 additional components necessary: the LED array, a motor-driver for the IR-cut filter mechanism, the PIR sensor, an RTC, and a power/settings switch. 
+
+<!-- Schematic of GPIO assignments -->
+![image](https://user-images.githubusercontent.com/65932258/162111161-7ad04dcc-5719-430a-bb87-d496ffd58c6d.png)
+
+None of the buttons use GPIO (they use a built in button channel), so we might as well make use of them.
+The LCD is certainly a nice feature, but I think it'll need to be scrapped. Plenty of camera traps lack one (check out Reconyx). This would free up 5 GPIO! These GPIO would be accessible via the leftmost (as shown below) header pins on the main board, if I wanted to attach my own components. The right header pins are strapping pins. 
+Say we go all out, and control the LED flash digitally, get a digital H-bridge, connect the PIR sensor, and enter the settings function via software and another GPIO attached to the switch, that only leaves one GPIO left over! Kinda measly. I'd like to leave at least 3 open for future tools. I could implement the settings like some camera traps, where you must make a modification within 10 seconds or normal functionality commences. Then I could take advantage of the boot pin like I did on the previous prototype for flashing the chip. Maybe the PIR module could be removable - to free up one GPIO for an alternative sensor? 
+That reminds me that the I2C pins are not brought out on the board. They would be accessible via the camera connector, or by removing the SMT accelerometer, or probably most easily via the ESP32 module itself. It'll look nasty but some small guage wire should do the job. 
+
+<!-- Components on ESP32-S3-EYE main board -->
+![image](https://user-images.githubusercontent.com/65932258/162114144-79b27dea-3653-4dd9-93cc-11a23a025691.png)
+
+## 3.4. Build-your-own P(CB)izza  
 
 # 4. Related Documents
   
