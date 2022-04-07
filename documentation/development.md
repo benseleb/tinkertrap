@@ -170,7 +170,7 @@ That reminds me that the I2C pins are not brought out on the board. They would b
 <!-- Components on ESP32-S3-EYE main board -->
 ![image](https://user-images.githubusercontent.com/65932258/162114144-79b27dea-3653-4dd9-93cc-11a23a025691.png)
 
-The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins on the main board, if I wanted to attach my own components. The right header pins are strapping pins. I found this little breakout that could make breadboarding a little bit easier! 
+The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins on the main board, if I wanted to attach my own components. The right header pins are strapping pins. I found this little [breakout board](https://www.digikey.com/en/products/detail/chip-quik-inc./DR127D254P10F/5978230?utm_adgroup=Adapter%2C%20Breakout%20Boards&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Product_Prototyping%2C%20Fabrication%20Products&utm_term=&utm_content=Adapter%2C%20Breakout%20Boards&gclid=CjwKCAjw9LSSBhBsEiwAKtf0n7yZIdTWm1LecCvVJ6c8e7OIaB8mGqIcadDMeKHdxRRrGVmwKbxvIxoCCB8QAvD_BwE) that could make breadboarding a little bit easier! 
 
 <!-- weird little SWD breakout board --> 
 ![image](https://user-images.githubusercontent.com/65932258/162117269-f57016ff-e019-4682-8f35-2d4e0c699dd2.png)
