@@ -175,6 +175,15 @@ The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins
 <!-- weird little SWD breakout board --> 
 ![image](https://user-images.githubusercontent.com/65932258/162117269-f57016ff-e019-4682-8f35-2d4e0c699dd2.png)
 
+**(temporary) okay, so pressing questions right now are:**
+-  ESP32-EYE only runs the SD-card in 1-bit mode (due to too few IO). This pretty much removes the option for video - at least at a decent framerate. That's alright, especially if we can offer some kind of image burst option. 
+-  How many things can I put on the I2C bus? Do my necessary sensors have different addresses? 
+-  JST connector for IR cut?
+-  IR cut will require some kind of h-bridge, either analog or digital IC. How many gpio would either of these methods require? Also, what is the voltage/current requirement to flip the filter? How long does it need to be applied? 
+-  Even if using the analog light sensor to control the IR cut, we would need at least 1 GPIO - we don't want the IR cut flipping willy nilly and wasting power - thus, we need some kind digitally controlled switch to allow flipping
+-  LED array power draw? Not sure what the power draw would look like, but I worry that it's not negligible and we'll certainly need to bypass the ESP32
+-  Battery charger circuit? I'd ideally like to have modular power source - either using 5V from USB, or LIPO. I'd then like the 5V USB to also charge the LIPO battery. Not sure if the ESP32-EYE already does this? 
+-  Is there an effective way to draw out and manage the GPIO I would need?
 
 ## 3.4. Build-your-own P(CB)izza  
 
