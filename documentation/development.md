@@ -176,6 +176,18 @@ The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins
 ![image](https://user-images.githubusercontent.com/65932258/162117269-f57016ff-e019-4682-8f35-2d4e0c699dd2.png)
 
 **(temporary) okay, so pressing questions right now are:**
+
+
+This is the block diagram for the esp32-eye:
+<!-- esp32-eye block diagram --> 
+![image](https://user-images.githubusercontent.com/65932258/164318081-8a6ce1e9-ccda-4cc8-bc12-0d9277056041.png)
+
+
+This is the imagined block diagram of my hijacked dev board: 
+<!-- tinkertrap block diagram -->
+![Picture3](https://user-images.githubusercontent.com/65932258/164318206-b5c51621-96eb-48ea-9d49-b494b4425689.png)
+
+
 -  ESP32-EYE only runs the SD-card in 1-bit mode (due to too few IO). This pretty much removes the option for video - at least at a decent framerate. That's alright, especially if we can offer some kind of image burst option. 
 -  How many things can I put on the I2C bus? Do my necessary sensors have different addresses? 
 -  JST connector for IR cut?
