@@ -196,6 +196,10 @@ There are 8 necessary additions to be considered:
 7. **PIR Sensor**: I want an integrated PIR sensor (still the primary sensor of choice) with adjustable sensitivity. Not sure the Adafruit module is the best example to build from - I don't care about the length of the PIR pulse, plus it is pretty power hungry. Not sure what IC it takes advantage of.
 8. **Power/Settings Switch**: Lastly, the device needs a switch. I'd be fine with a two-position switch, where the LCD will prompt the user to alter settings. If the user doesn't press any buttons in a specified time period, the device commences normal function. <-- This could all be done in software. However, I would also like a switch that puts the device in boot mode (for uploading new scripts), as I believe the current device has a button for this. The other ESP32 chips I used required a boot pin to be held low during the entire upload process - not sure about the esp32-eye. The existance of a button implies to me that the button must activate this mode without the need for holding the reset pin low. 
 
+**frankenstein's dev board:**
+![image](https://user-images.githubusercontent.com/65932258/164790159-6a90b9d6-83ee-4245-a381-033f60593da0.png)
+
+
 ## 3.4. Build-your-own P(CB)izza  
 
 # 4. Related Documents
