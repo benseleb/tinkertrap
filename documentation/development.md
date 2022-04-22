@@ -177,7 +177,6 @@ The 5 LCD GPIO would be accessible via the leftmost (as shown above) header pins
 
 **(temporary) okay, so pressing questions right now are:**
 
-
 This is the block diagram for the esp32-eye:
 <!-- esp32-eye block diagram --> 
 ![image](https://user-images.githubusercontent.com/65932258/164318081-8a6ce1e9-ccda-4cc8-bc12-0d9277056041.png)
@@ -193,19 +192,9 @@ There are 8 necessary additions to be considered:
 3. **Light/dark sensor**: I need a comparator style light/dark sensor to tell my IR cut filter mechanism to flip, and to tell my LED array if it can turn on (with some kind of "allowance" transistor?).
 4. **Motor driver**: The light/dark sensor must trigger a motor driver to activate the IR-cut filter mechanism. Since the motor direction will need to be reversed, depending on night or day, I'm not sure what additional components the connection entails. 
 5. **IR-cut filter mechanism**: The IR filter will remain in whichever position it is pushed. Ideally, it should only move twice a day (at sunrise and sunset), and toggling shouldn't be much of an issue - especially if we consider hysteresis. A JST connector to the board would be easiest to take advantage of - as most IR-cut filter mechanisms come with a male JST connector.
-6. **LED Illumination Array**: I want to maintain digitally control, so that the array can be powered on in the daylight. Can I get a transistor with two base sources? 
+6. **LED Illumination Array**: I want to maintain digitally control, so that the array can be powered on in the daylight. Can I get a transistor with two base sources? White LED array should open IR-cut filter. 
 7. **PIR Sensor**: I want an integrated PIR sensor (still the primary sensor of choice) with adjustable sensitivity. Not sure the Adafruit module is the best example to build from - I don't care about the length of the PIR pulse, plus it is pretty power hungry. Not sure what IC it takes advantage of. 
 8. **Power/Settings Switch**: Lastly, the device needs a switch. I'd be fine with a two-position switch, where the LCD will prompt the user to alter settings. If the user doesn't press any buttons in a specified time period, the device commences normal function. <-- This could all be done in software. However, I would also like a switch that puts the device in boot mode (for uploading new scripts), as I believe the current device has a button for this. The other ESP32 chips I used required a boot pin to be held low during the entire upload process - not sure about the esp32-eye. The existance of a button implies to me that the button must activate this mode without the need for holding the reset pin low. 
-
-
--  ESP32-EYE only runs the SD-card in 1-bit mode (due to too few IO). This pretty much removes the option for video - at least at a decent framerate. That's alright, especially if we can offer some kind of image burst option. 
--  How many things can I put on the I2C bus? Do my necessary sensors have different addresses? 
--  JST connector for IR cut?
--  IR cut will require some kind of h-bridge, either analog or digital IC. How many gpio would either of these methods require? Also, what is the voltage/current requirement to flip the filter? How long does it need to be applied? 
--  Even if using the analog light sensor to control the IR cut, we would need at least 1 GPIO - we don't want the IR cut flipping willy nilly and wasting power - thus, we need some kind digitally controlled switch to allow flipping
--  LED array power draw? Not sure what the power draw would look like, but I worry that it's not negligible and we'll certainly need to bypass the ESP32
--  Battery charger circuit? I'd ideally like to have modular power source - either using 5V from USB, or LIPO. I'd then like the 5V USB to also charge the LIPO battery. Not sure if the ESP32-EYE already does this? 
--  Is there an effective way to draw out and manage the GPIO I would need?
 
 ## 3.4. Build-your-own P(CB)izza  
 
