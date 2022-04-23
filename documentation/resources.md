@@ -23,12 +23,12 @@ Again, here is a helpful "product selector matrix" that highlights the details b
 <!-- REMEMBER, GITHUB MARKDOWN AUTOMATICALLY "CENTERS COLUMNS! -->
 |    Module   | Package | Temp Range| GPIO  | Flash |  SRAM  |   ROM  | PSRAM |  Clock  | Core | Antenna |   Dims (mm)   |
 | :---------: | :-----: | :-------: | :---: | :---: | :----: | :----: | :---: | :-----: | :--: | :-----: | :-----------: |
-| -S3 CHIPSET |  QFN56  | -40 ~ 105 |  45   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace |    7.0x7.0    |
-|  -WROOM-1   |  Module | -40 ~ 85  |  36   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.1 |
-|  -WROOM-1U  |  Module | -40 ~ 85  |  36   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.2 |
-|  -WROOM-2   |  Module | -40 ~ 65  |  33   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.1 |
-|   -MINI-1   |  Module | -40 ~ 85  |  39   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 15.4x20.5x2.4 |
-|  -MINI-1U   |  Module | -40 ~ 85  |  39   | 0 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 15.4x20.5x2.4 |
+| -S3 CHIPSET |  QFN56  | -40 ~ 105 |  45   | 0/4/8 MB | 512 kB | 384 kB | 0/2/8 MB  | 240 MHz | Dual | F-Trace |    7.0x7.0    |
+|  -WROOM-1   |  Module | -40 ~ 85  |  36   | 4/8/16 MB  | 512 kB | 384 kB | 0/2/8 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.1 |
+|  -WROOM-1U  |  Module | -40 ~ 85  |  36   | 4/8/16 MB  | 512 kB | 384 kB | 0/2/8 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.2 |
+|  -WROOM-2   |  Module | -40 ~ 65  |  33   | 16/32 MB  | 512 kB | 384 kB | 8/8 MB  | 240 MHz | Dual | F-Trace | 18.0x25.5x3.1 |
+|   -MINI-1   |  Module | -40 ~ 85  |  39   | 8 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 15.4x20.5x2.4 |
+|  -MINI-1U   |  Module | -40 ~ 85  |  39   | 8 MB  | 512 kB | 384 kB | 0 MB  | 240 MHz | Dual | F-Trace | 15.4x20.5x2.4 |
 
 
 ## Other Manufacturer Component Datasheets
