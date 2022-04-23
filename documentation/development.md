@@ -12,6 +12,8 @@
   - [3.3. Hijacking the ESP32-S3-EYE](#33-hijacking-the-esp32-s3-eye)
   - [3.4. Build-your-own P(CB)izza](#34-build-your-own-pcbizza)
 - [4. Related Documents](#4-related-documents)
+  - [4.1. Internal Development](#41-internal-development)
+  - [4.2. Further Resources](#42-further-resources)
 
 # 1. Motivation
 
@@ -203,14 +205,17 @@ There are 8 necessary additions to be considered:
 ## 3.4. Build-your-own P(CB)izza  
 
 # 4. Related Documents
+
+## [4.1. Internal Development](https://github.com/benseleb/tinkertrap/blob/main/documentation/development.md)
+
+
+## [4.2. Further Resources](https://github.com/benseleb/tinkertrap/blob/main/documentation/resources.md)
   
-4.1. Schematic
+~~4.x. Schematic
+TinkerTrap v1.2 Main Board Schematic (PDF)
+TinkerTrap v1.1 Main Board Schematic (PDF)~~
 
-- TinkerTrap v1.2 Main Board Schematic (PDF)
-- TinkerTrap v1.1 Main Board Schematic (PDF)
-
-4.2. PCB Layout
-
-- TinkerTrap v1.2 Main Board PCB Layout (PDF)
-- TinkerTrap v1.1 Main Board PCB Layout (PDF)
+~~4.x. PCB Layout
+TinkerTrap v1.2 Main Board PCB Layout (PDF)
+TinkerTrap v1.1 Main Board PCB Layout (PDF)~~
 
