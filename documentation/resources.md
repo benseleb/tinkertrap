@@ -33,4 +33,10 @@ Again, here is a helpful "product selector matrix" that highlights the details b
 
 ## Other Manufacturer Component Datasheets
 
-_(to be completed)_
+Photodiode
+
+
+[TS881 Nanopower Comparator](https://www.st.com/resource/en/datasheet/ts881.pdf)
+
+
+
