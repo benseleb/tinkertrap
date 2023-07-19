@@ -7,4 +7,3 @@ TinkerTrap is built-for-purpose development platform designed to overcome the re
 Contributors: 
 - Benjamin Seleb
 - Nicholas Flint
-- Varun Sendilraj
